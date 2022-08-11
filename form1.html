@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <div class="C:\Users\sushm\Documents\personal details\photo.jpg">
+    <style>
+        .center{
+        
+            text-align: center;
+            color: orange;
+        }
+    </style>
+    <h1 class="center">Book a call</h1>
+    <h4 class="center" style="color: black;">Book a call slot and our representative will call you within 1hr of selected time.</h4>
+    <hr>
+    <form action="#" onsubmit="getacall()">
+        <label>Name:</label><br>
+        <input type="text" name="username" required><br>
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br>
+        <label>Phone:</label><br>
+        <input type="tel" name="phone" required><br>
+        <label>Time for call:</label><br>
+        <input type="date" name="date" required> 
+        <input type="time" name="time" required> 
+        <br>
+        <button class="center" style="background-color:orange; color:white; border-color: orange;" >GET A CALL</button>
+    </form>
+    <script>
+        function getacall()
+        {
+            const name = document.getElementByname('username').value;
+            console.log(name)
+            const email = document.getElementById('email').value;
+            console.log(email)
+        }
+    </script>
+    </div>
+</body>
+</html>
