@@ -104,6 +104,9 @@
                 phone
             }
             localStorage.setItem('UserDetails',JSON.stringify(object));
+
+           const object2 = JSON.parse(localStorage.getItem('UserDetails'));
+           console.log(object2);
         }
     </script>
     </div>
