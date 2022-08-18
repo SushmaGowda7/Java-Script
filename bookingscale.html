@@ -89,15 +89,13 @@
     </form>
     <ul id="listOfUsers"></ul>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-  console.log("vscode");
-  //localStorage.getItem();
+        window.addEventListener("DOMContentLoaded", () => {
+            console.log("vscode");
 });
-
-if (document.readyState !== "loading") {
-  console.log("vscode");
-
-  var keys = Object.keys(localStorage), 
+    if (document.readyState !== "loading") {
+    console.log("vscode");
+    }
+    var keys = Object.keys(localStorage), 
     i = keys.length; //6
   console.log("keys", keys);
   let stringifiedDetailsOfPeople, detailsOfPeople;
@@ -111,10 +109,9 @@ if (document.readyState !== "loading") {
       detailsOfPeople = JSON.parse(stringifiedDetailsOfPeople);
       console.log("details", detailsOfPeople);
 
-      addNewLineElement(detailsOfPeople);
+      showNewUsers(detailsOfPeople);
     }
   });
-}
         function saveTolocalStorage(event)
         {
             event.preventDefault();
@@ -131,9 +128,26 @@ if (document.readyState !== "loading") {
         }
         function showNewUsers(user)
         {
+            if(localStorage.getItem(user.email)){
+                removeUserFromScreen(user.email);
+            }
             const parentNode = document.getElementById('listOfUsers');
             const childHtml = `<li> ${user.name} - ${user.email}</li>`;
             parentNode.innerHTML =  parentNode.innerHTML + childHtml;
+        }
+        function deleteUser(email){
+            console.log(email);
+            localStorage.removeItem(email);
+            removeUserFromScreen(email);
+        }
+        function removeUserFromScreen(email)
+        {
+            const parentNode = document.getElementById('listOfUsers');
+            const childNodeToBeDeleted = document.getElementById('listOfUsers');
+            if(childNodeToBeDeleted)
+            {
+                parentNode.removeChild(childNodeToBeDeleted);
+            }
         }
     </script>
     </div>
