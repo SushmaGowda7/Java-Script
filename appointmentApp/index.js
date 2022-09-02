@@ -22,24 +22,30 @@ function saveTolocalStorage(event)
     // showNewUsers(object);
 }
 window.addEventListener("DOMContentLoaded", () => {
-    const localStorageObj = localStorage;
-    const localStorageKeys = Object.keys(localStorageObj)
+    axios.get('https://crudcrud.com/api/199974147aa147eeb775a2bfd0a5faa2/AppData')
+    .then((response) => {
+        console.log(response)
 
-    for (let index = 0; index < localStorageKeys.length; index++) {
-        const key = localStorageKeys[index];
-        const userDetailsString = localStorageObj[key];
-        const userDetailsObj = JSON.parse(userDetailsString);
-        showNewUsers(userDetailsObj)
-        
-    }
+        for(var i = 0 ; i < response.data.length ; i++){
+            showNewUsers(response.data[i])
+        }
+    })
+    .catch((error) => {
+        console.log(error)
+    })
 });
+
 function showNewUsers(user)
 {
-    if(localStorage.getItem(user.email)){
+    document.getElementById('username').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phone').value = '';
+
+    if(localStorage.getItem(user.email)!== null){
         removeUserFromScreen(user.email);
     }
     const parentNode = document.getElementById('listOfUsers');
-    const childHtml = `<li> ${user.name} - ${user.email}</li>`;
+    const childHtml = `<li id=${user.email}> ${user.name} - ${user.email} - ${user.phone}</li>`;
     parentNode.innerHTML =  parentNode.innerHTML + childHtml;
 }
 
