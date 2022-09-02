@@ -1,0 +1,54 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+*{
+    box-sizing: border-box;
+    margin: 1px;
+    padding: 1px;
+}
+.center {
+    text-align: center;
+    color: black;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.bg-img {
+    background-image: url("https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/email_mail_box_envelope_send_with_flag.jpg?itok=tq9KILwH");
+    background-position: center;
+    background-size: cover;
+
+}
+.container {
+    width: 530px;
+    height: 415px;
+    margin: 10% auto;
+    background: white;
+    border-radius: 1px;
+    position: relative;
+    border: orange;
+    top: -110px;
+}
+.containerform {
+    width: 700px;
+    position: relative;
+    top: 10px;
+
+}
+.forminput {
+    width: 520px;
+    padding: 5px 7px;
+    margin: 3px;
+}
+.forminputdatentime{
+    width: 255px;
+    padding: 5px 7px;
+    margin: 3px;
+}
+.button {
+    background-color:orange; 
+    color:white; 
+    border-color: orange;
+    width: 520px;
+    padding: 5px 7px;
+    margin: 3px;
+}
