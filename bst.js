@@ -51,6 +51,21 @@ class BST{
         }
         return false;
     }
+
+    preOrder(){
+        if(this.root == null){
+            return null;
+        }else{
+            var result = new Array();
+            function traversePreOrder(node){
+                result.push(node.data);
+                node.left && traversePreOrder(node.left);
+                node.right && traversePreOrder(node.right);
+            };
+            traversePreOrder(this.root);
+            return result;
+        };
+    }
 }
 
 const bst = new BST(15);
@@ -58,7 +73,7 @@ bst.insert(12);
 bst.insert(22);
 bst.insert(3);
 bst.insert(42);
-bst.insert(56);
+bst.insert(6);
 bst.insert(65);
-console.log(bst.search(12));
-console.log(bst);
+console.log(bst.preOrder());
+//console.log(bst.search(12));
