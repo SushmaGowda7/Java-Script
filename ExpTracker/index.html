@@ -8,14 +8,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 id="h1">Expense Tracker</h1><br><br>
+  <h1 id="h1">Expense Tracker</h1>
+  <br><br><br>
   <form id="form">
     <label for="amount">Expense:</label>
-    <input type="number" class="amount" id="amount"><br>
+    <input type="number" class="amount" id="amount">
     <label for="description">Description:</label>
-    <input type="text" class="description" id="description"><br>
+    <input type="text" class="description" id="description">
     <label for="category">Category:</label>
-    <select name="category" id="category"><br>
+    <select name="category" id="category">
       <option value="category"></option>
       <option value="Food">Food</option>
       <option value="Bike">Bike</option>
@@ -25,11 +26,10 @@
       <option value="Shopping">Shopping</option>
       <option value="Festivals">Festivals</option>
     </select>
-    <br><br>
       <button id="submit">Submit</button>
-        <ul id="list-items"></ul>
+        <ul id="listitems"></ul>
   </form>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
-<script src="index.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
